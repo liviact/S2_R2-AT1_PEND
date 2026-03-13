@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Exibir Nome</title>
+    <style>
+        
+        body {
+            font-family:  sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #dddddd73;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: #0056b3;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        #mensagem {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+           
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Por favor, digite seu nome</h2>
+        <input type="text" id="nomeUsuario" placeholder="Seu nome aqui...">
+        <button onclick="exibirMensagem()">Exibir boas-vindas</button>
+        
+       
+        <p id="mensagem"></p>
+    </div>
+
+    <script>
+        function exibirMensagem() {
+            
+            const nome = document.getElementById('nomeUsuario').value;
+            const areaMensagem = document.getElementById('mensagem');
+
+          
+            if (nome !== "") {
+                areaMensagem.innerText = "Olá, " + nome + "! Seja bem-vindo(a), divo(a)!";
+                areaMensagem.style.color = "#28a745";
+            } else {
+                areaMensagem.innerText = "Campos obrigatórios não preenchidos!";
+                areaMensagem.style.color = "#dc3545"; 
+            }
+        }
+    </script>
+
+</body>
+</html>
