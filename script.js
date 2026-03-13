@@ -1,15 +1,24 @@
-function exibirMensagem(){
 
-    const nome = document.getElementById("nomeUsuario").value;
-    const areaMensagem = document.getElementById("mensagem");
+const inputTarefa = document.getElementById("inputTarefa");
+const btnAdicionar = document.getElementById("btnAdicionar");
+const listaTarefas = document.getElementById("listaTarefas");
+const mensagem = document.getElementById("mensagem");
 
-    if(nome !== ""){
-        areaMensagem.innerText = "Oie, " + nome + "! Seja bem-vindo(a), divo(a)!";
-        areaMensagem.style.color = "#28a745";
+btnAdicionar.addEventListener("click", function () {
+let texto = inputTarefa.value;
+    if (texto === "") {
+        mensagem.textContent = "Ei, escreve alguma coisa aí!";
+        mensagem.className = "text-danger fw-bold";
+    } else {
+
+    const li = document.createElement("li");
+    li.className = "list-group-item";
+    li.textContent = texto;
+    listaTarefas.appendChild(li);
+    inputTarefa.value = "";
+
+ mensagem.textContent = "Eba, tarefa adicionada com sucesso!";
+ mensagem.className = "text-success fw-bold";
     }
-    else{
-        areaMensagem.innerText = "Campos obrigatórios não preenchidos!";
-        areaMensagem.style.color = "#dc3545";
-    }
 
-}
+});
