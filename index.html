@@ -1,67 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport">
-    <title>Mudança de Texto</title>
-    <style>
-        
-        body {
-            font-family:sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f2f5;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Lista</title>
 
-        .container {
-            text-align: center;
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px #0e01011a;
-        }
+<style>
 
-        h1 {
-            color: #000000;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        button {
-            padding: 12px 24px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: #0056b3;
-            border-radius: 8px;
-        }
 
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+.container{
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+.input-area{
+    display: flex;
+    gap: 10px;
+}
+
+input{
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+button{
+    padding: 8px 12px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #43a047;
+}
+
+
+ul{
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    background: #f7f7f7;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-       
-        <h1 id="meuTexto">Clique no botão azul para mudar este texto.</h1>
-        <button onclick="alterarTexto()">Clique Aqui</button>
-    </div>
+<div class="container">
 
-    <script>
-        function alterarTexto() {
-            const textoElemento = document.getElementById("meuTexto");
-            textoElemento.innerText = "✨ Mágica! O JS agiu aqui."
+<h2>lista diva 🎀</h2>
 
-            textoElemento.style.color = " #871F78";
-        }
-    </script>
+<div class="input-area">
+<input type="text" id="input" placeholder="Digite algo">
+<button id="botao">Adicionar</button>
+</div>
 
+<ul id="lista"></ul>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
