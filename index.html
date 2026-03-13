@@ -1,84 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <title>Exibir Nome</title>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Mudança de Texto</title>
     <style>
         
         body {
-            font-family:  sans-serif;
-            background-color: #f0f2f5;
+            font-family:sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
+            background-color: #f0f2f5;
         }
 
         .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
-            width: 350px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px #0e01011a;
         }
 
-
-        input[type="text"] {
-            width: 80%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 2px solid #dddddd73;
-            border-radius: 8px;
-            font-size: 16px;
+        h1 {
+            color: #000000;
+            margin-bottom: 20px;
+            font-size: 24px;
         }
-
 
         button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
             background-color: #007bff;
             color: white;
             border: #0056b3;
-            padding: 10px 20px;
             border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
         }
 
-
-        #mensagem {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #28a745;
-           
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Por favor, digite seu nome</h2>
-        <input type="text" id="nomeUsuario" placeholder="Seu nome aqui...">
-        <button onclick="exibirMensagem()">Exibir boas-vindas</button>
-        
        
-        <p id="mensagem"></p>
+        <h1 id="meuTexto">Clique no botão azul para mudar este texto.</h1>
+        <button onclick="alterarTexto()">Clique Aqui</button>
     </div>
 
     <script>
-        function exibirMensagem() {
-            
-            const nome = document.getElementById('nomeUsuario').value;
-            const areaMensagem = document.getElementById('mensagem');
+        function alterarTexto() {
+            const textoElemento = document.getElementById("meuTexto");
+            textoElemento.innerText = "✨ Mágica! O JS agiu aqui."
 
-          
-            if (nome !== "") {
-                areaMensagem.innerText = "Olá, " + nome + "! Seja bem-vindo(a), divo(a)!";
-                areaMensagem.style.color = "#28a745";
-            } else {
-                areaMensagem.innerText = "Campos obrigatórios não preenchidos!";
-                areaMensagem.style.color = "#dc3545"; 
-            }
+            textoElemento.style.color = " #871F78";
         }
     </script>
 
