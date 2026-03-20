@@ -1,9 +1,13 @@
+// Função que altera o texto e o estilo de um elemento
 function alterarTexto() {
 
-    const textoElemento = document.getElementById("meuTexto");
+// Seleciona o elemento HTML pelo ID "meuTexto"
+const textoElemento = document.getElementById("meuTexto");
 
-    textoElemento.innerText = "✨ Mágica! O JS agiu aqui.";
+// Altera o texto exibido dentro do elemento
+textoElemento.innerText = "✨ Mágica! O JS agiu aqui.";
 
-    textoElemento.style.color = "#871F78";
+// Altera a cor do texto para um tom roxo
+textoElemento.style.color = "#871F78";
 
 }
